@@ -1,318 +1,513 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Luan Nunes | Dentista</title>
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              bg: '#F5F2EC',
-              card: '#FCFAF7',
-              accent: '#264B5D',
-              accentHover: '#1D3B4A',
-              textDark: '#1F2937',
-              textMuted: '#71717A',
-              border: '#E8E4DC',
-              sectionBg: '#EAE3D9'
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaí Ferreira e Sorveteria</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBg: '#FBF8F3',
+                        purpleDark: '#3A1443',
+                        purpleSoft: '#50205B',
+                        purpleText: '#2D1236',
+                        greenLight: '#E2EBD8',
+                        greenText: '#4D6836',
+                        greenAccent: '#CBE385',
+                        greenAccentIcon: '#B8D558',
+                        cardBg: '#FFFFFF',
+                        borderLight: '#F0EBE3',
+                        grayText: '#7A727D'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
             }
-          },
-          fontFamily: {
-            serif: ['Cormorant Garamond', 'serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-          }
         }
-      }
-    }
-  </script>
-
-  <style>
-    html, body {
-      min-height: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-    body {
-      background-color: #F5F2EC;
-      color: #1F2937;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .modal-backdrop {
-      background-color: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(4px);
-    }
-  </style>
+    </script>
+    <style>
+        body {
+            background-color: #d1ec76;
+            color: #2D1236;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .modal-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .modal-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .modal-scrollbar::-webkit-scrollbar-thumb {
+            background: #d4c7d7;
+            border-radius: 10px;
+        }
+    </style>
 </head>
-<body class="min-h-screen flex justify-center antialiased overflow-y-auto">
+<body class="min-h-screen flex justify-center items-center p-4 sm:p-6">
 
-  <main class="w-full max-w-md bg-brand-bg min-h-screen flex flex-col justify-between shadow-sm relative">
-    
-    <div class="px-6 pt-8 pb-6 flex flex-col items-center text-center">
-      
-      <div class="w-full flex items-center justify-center gap-4 mb-6">
-        <div class="h-[1px] bg-stone-300 flex-1 max-w-[80px]"></div>
-        <span class="text-[10px] tracking-[0.2em] sm:tracking-[0.25em] text-brand-textMuted uppercase font-medium">Cuidado em cada detalhe</span>
-        <div class="h-[1px] bg-stone-300 flex-1 max-w-[80px]"></div>
-      </div>
-
-      <div class="w-full max-w-[320px] h-[280px] rounded-t-full overflow-hidden mb-8 border border-stone-200/60 shadow-sm">
-        <img 
-          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800" 
-          alt="Consultório e Clínica Odontológica Moderna" 
-          class="w-full h-full object-cover object-center"
-          onerror="this.src='https://placehold.co/600x800/EAE3D9/264B5D?text=Dr.+Luan+Nunes'"
-        />
-      </div>
-
-      <h1 class="font-serif text-4xl sm:text-5xl font-medium tracking-tight text-brand-accent mb-1">
-        Dr. Luan Nunes
-      </h1>
-      <p class="text-[11px] tracking-[0.3em] uppercase text-brand-textMuted font-medium mb-6">
-        D E N T I S T A
-      </p>
-
-      <h2 class="font-serif text-2xl sm:text-3xl text-stone-800 font-normal leading-snug mb-3">
-        Odontologia e<br>Estética Orofacial
-      </h2>
-      <p class="text-xs sm:text-sm text-stone-600 font-light max-w-[280px] leading-relaxed mb-8">
-        Um olhar atento para o seu sorriso. Cuidado pensado para você, em cada etapa.
-      </p>
-
-      <div class="w-full flex flex-col gap-3">
-        <div class="text-left mb-1">
-          <span class="text-[10px] tracking-[0.2em] text-brand-textMuted uppercase font-semibold">Seu próximo passo</span>
-        </div>
-
-        <button 
-          onclick="openModal()" 
-          class="w-full bg-brand-accent hover:bg-brand-accentHover text-white rounded-2xl p-4 flex items-center justify-between transition-all duration-200 text-left shadow-sm group">
-          <div class="flex items-center gap-3.5">
-            <i data-lucide="calendar" class="w-5 h-5 text-stone-200"></i>
-            <div>
-              <div class="font-medium text-sm text-white">Agendamento</div>
-              <div class="text-xs text-stone-300 font-light">Seu cuidado começa com uma conversa.</div>
-            </div>
-          </div>
-          <i data-lucide="arrow-up-right" class="w-4 h-4 text-stone-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
-        </button>
-
-        <a 
-          href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Gostaria%20de%20deixar%20uma%20avalia%C3%A7%C3%A3o%20no%20Google%20Maps." 
-          target="_blank" 
-          class="w-full bg-brand-card border border-stone-200/80 hover:border-stone-300 text-brand-textDark rounded-2xl p-4 flex items-center justify-between transition-all duration-200 text-left group">
-          <div class="flex items-center gap-3.5">
-            <i data-lucide="star" class="w-5 h-5 text-brand-accent"></i>
-            <div>
-              <div class="font-medium text-sm text-stone-800">Avaliação Google Maps</div>
-              <div class="text-xs text-stone-500 font-light">Sua experiência é importante para nós.</div>
-            </div>
-          </div>
-          <i data-lucide="arrow-up-right" class="w-4 h-4 text-stone-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
-        </a>
-
-        <a 
-          href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Vim%20pelo%20Instagram%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." 
-          target="_blank" 
-          class="w-full bg-brand-card border border-stone-200/80 hover:border-stone-300 text-brand-textDark rounded-2xl p-4 flex items-center justify-between transition-all duration-200 text-left group">
-          <div class="flex items-center gap-3.5">
-            <i data-lucide="instagram" class="w-5 h-5 text-brand-accent"></i>
-            <div>
-              <div class="font-medium text-sm text-stone-800">Instagram</div>
-              <div class="text-xs text-stone-500 font-light">Sorrisos, cuidados e conteúdos para você.</div>
-            </div>
-          </div>
-          <i data-lucide="arrow-up-right" class="w-4 h-4 text-stone-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
-        </a>
-
-        <a 
-          href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Gostaria%20de%20saber%20o%20endere%C3%A7o%20e%20localiza%C3%A7%C3%A3o%20do%20consult%C3%B3rio." 
-          target="_blank" 
-          class="w-full bg-brand-card border border-stone-200/80 hover:border-stone-300 text-brand-textDark rounded-2xl p-4 flex items-center justify-between transition-all duration-200 text-left group">
-          <div class="flex items-center gap-3.5">
-            <i data-lucide="map-pin" class="w-5 h-5 text-brand-accent"></i>
-            <div>
-              <div class="font-medium text-sm text-stone-800">Localização</div>
-              <div class="text-xs text-stone-500 font-light">Endereço a informar</div>
-            </div>
-          </div>
-          <i data-lucide="arrow-up-right" class="w-4 h-4 text-stone-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
-        </a>
-
-        <a 
-          href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20os%20hor%C3%A1rios%20de%20funcionamento." 
-          target="_blank" 
-          class="w-full bg-[#E8EEF2] border border-stone-200/50 text-brand-textDark rounded-2xl p-4 flex items-center justify-between transition-all duration-200 text-left">
-          <div class="flex items-center gap-3.5">
-            <i data-lucide="clock" class="w-5 h-5 text-brand-accent"></i>
-            <div>
-              <div class="font-medium text-sm text-stone-800">Horário de funcionamento</div>
-              <div class="text-xs text-stone-500 font-light">Horários a informar</div>
-            </div>
-          </div>
-        </a>
-      </div>
-
-    </div>
-
-    <div class="bg-brand-sectionBg px-6 py-8 border-t border-stone-300/40">
-      <div class="mb-2">
-        <span class="text-[10px] tracking-[0.2em] text-brand-textMuted uppercase font-semibold">Cuidado Integrado</span>
-      </div>
-      
-      <h3 class="font-serif text-3xl text-stone-800 font-normal mb-6">
-        Seu sorriso, por inteiro.
-      </h3>
-
-      <div class="space-y-4 mb-6">
+    <main class="w-full max-w-[430px] flex flex-col items-center mx-auto space-y-4">
         
-        <div class="flex items-start gap-3 border-b border-stone-300/50 pb-3">
-          <i data-lucide="plus" class="w-4 h-4 text-stone-500 mt-1 flex-shrink-0"></i>
-          <div>
-            <h4 class="font-medium text-sm text-stone-800">Clínico Geral</h4>
-            <p class="text-xs text-stone-600 font-light">Saúde bucal e prevenção no dia a dia.</p>
-          </div>
+        <div class="inline-block bg-[#E5EEDD] text-[#55713C] px-5 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase mb-1">
+            SEU MOMENTO MAIS GOSTOSO
         </div>
 
-        <div class="flex items-start gap-3 border-b border-stone-300/50 pb-3">
-          <i data-lucide="plus" class="w-4 h-4 text-stone-500 mt-1 flex-shrink-0"></i>
-          <div>
-            <h4 class="font-medium text-sm text-stone-800">Prótese Dentária</h4>
-            <p class="text-xs text-stone-600 font-light">Função e conforto para o seu sorriso.</p>
-          </div>
+        <div class="w-28 h-28 rounded-full bg-white p-1.5 shadow-sm border border-purple-100 flex items-center justify-center overflow-hidden">
+            <img src="https://raw.githubusercontent.com/lucasvini-eng/logos-src/refs/heads/main/logo-72.jpg" alt="Açaí Ferreira Logo" class="w-full h-full object-contain rounded-full" onerror="this.src='https://placehold.co/112x112/3A1443/FFFFFF?text=Acai+Ferreira'">
         </div>
 
-        <div class="flex items-start gap-3 border-b border-stone-300/50 pb-3">
-          <i data-lucide="plus" class="w-4 h-4 text-stone-500 mt-1 flex-shrink-0"></i>
-          <div>
-            <h4 class="font-medium text-sm text-stone-800">Clareamento</h4>
-            <p class="text-xs text-stone-600 font-light">Luminosidade com cuidado individualizado.</p>
-          </div>
+        <div class="text-center px-4 space-y-2 mb-2">
+            <h1 class="text-2xl sm:text-[26px] font-extrabold text-[#2C1035] leading-tight tracking-tight">
+                Açaí Ferreira<br>e Sorveteria
+            </h1>
+            <p class="text-[13px] text-gray-500 font-medium">
+                Artesanais e sabores únicos.
+            </p>
+            <p class="text-[12px] text-gray-400 font-normal">
+                Açaí do seu jeito. Sorvete para todo momento.
+            </p>
         </div>
 
-        <div class="flex items-start gap-3 border-b border-stone-300/50 pb-3">
-          <i data-lucide="plus" class="w-4 h-4 text-stone-500 mt-1 flex-shrink-0"></i>
-          <div>
-            <h4 class="font-medium text-sm text-stone-800">Lentes de Contato</h4>
-            <p class="text-xs text-stone-600 font-light">Estética do sorriso com atenção aos detalhes.</p>
-          </div>
+        <div class="w-full space-y-3 pt-1">
+            
+            <button onclick="toggleBuilderModal(true)" class="w-full bg-[#3D1845] hover:bg-[#321339] text-white p-4 rounded-[22px] flex items-center justify-between transition-all duration-200 shadow-md group active:scale-[0.99]">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-12 h-12 bg-[#D1EC76] rounded-[16px] flex items-center justify-center text-[#2D1236] shrink-0">
+                        <i data-lucide="soup" class="w-6 h-6 stroke-[2.2]"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="text-[10px] font-bold text-[#D1EC76] tracking-wider uppercase block">DO SEU JEITO</span>
+                        <h2 class="text-[16px] font-bold leading-snug">Monte seu açaí</h2>
+                        <p class="text-[11px] text-purple-200 opacity-90">Escolha seus sabores e complementos</p>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-purple-200 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+
+            <button onclick="openMenuModal()" class="w-full bg-white hover:bg-gray-50 text-purpleText p-4 rounded-[22px] flex items-center justify-between border border-[#EFEAE4] shadow-sm transition-all duration-200 group active:scale-[0.99]">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-12 h-12 bg-[#F6F1FA] rounded-[16px] flex items-center justify-center text-[#50205B] shrink-0">
+                        <i data-lucide="book-open" class="w-5 h-5 stroke-[2]"></i>
+                    </div>
+                    <div class="text-left">
+                        <h2 class="text-[15px] font-bold text-[#2C1035]">Cardápio Digital</h2>
+                        <p class="text-[11px] text-gray-400">Conheça todas as nossas delícias</p>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+
+            <a href="https://maps.app.goo.gl/mfk6RMQLsbAknWyt8" target="_blank" class="w-full bg-white hover:bg-gray-50 text-purpleText p-4 rounded-[22px] flex items-center justify-between border border-[#EFEAE4] shadow-sm transition-all duration-200 group active:scale-[0.99]">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-12 h-12 bg-[#F6F1FA] rounded-[16px] flex items-center justify-center text-[#50205B] shrink-0">
+                        <i data-lucide="star" class="w-5 h-5 stroke-[2]"></i>
+                    </div>
+                    <div class="text-left">
+                        <h2 class="text-[15px] font-bold text-[#2C1035]">Avalie no Google Maps</h2>
+                        <p class="text-[11px] text-gray-400">Sua opinião deixa tudo mais gostoso</p>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+            <a href="https://www.ifood.com.br/delivery/americana-sp/acai-ferreira-e-sorveteria-morada-do-sol/36914e7c-6004-4341-83c9-31a0d0592091?UTM_Medium=share" target="_blank" class="w-full bg-white hover:bg-gray-50 text-purpleText p-4 rounded-[22px] flex items-center justify-between border border-[#EFEAE4] shadow-sm transition-all duration-200 group active:scale-[0.99]">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-12 h-12 bg-[#F6F1FA] rounded-[16px] flex items-center justify-center text-[#50205B] shrink-0">
+                        <i data-lucide="shopping-bag" class="w-5 h-5 stroke-[2]"></i>
+                    </div>
+                    <div class="text-left">
+                        <h2 class="text-[15px] font-bold text-[#2C1035]">iFood</h2>
+                        <p class="text-[11px] text-gray-400">Peça e receba onde estiver</p>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+            <a href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Vim%20pelo%20Instagram%20da%20A%C3%A7a%C3%ADteria." target="_blank" class="w-full bg-white hover:bg-gray-50 text-purpleText p-4 rounded-[22px] flex items-center justify-between border border-[#EFEAE4] shadow-sm transition-all duration-200 group active:scale-[0.99]">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-12 h-12 bg-[#F6F1FA] rounded-[16px] flex items-center justify-center text-[#50205B] shrink-0">
+                        <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram" class="w-6 h-6">
+                    </div>
+                    <div class="text-left">
+                        <h2 class="text-[15px] font-bold text-[#2C1035]">Instagram</h2>
+                        <p class="text-[11px] text-gray-400">Uma dose de sabor no seu feed</p>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+            <a href="https://maps.app.goo.gl/mfk6RMQLsbAknWyt8" target="_blank" class="w-full bg-white hover:bg-gray-50 text-purpleText p-4 rounded-[22px] flex items-center justify-between border border-[#EFEAE4] shadow-sm transition-all duration-200 group active:scale-[0.99]">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-12 h-12 bg-[#F6F1FA] rounded-[16px] flex items-center justify-center text-[#50205B] shrink-0">
+                        <i data-lucide="map-pin" class="w-5 h-5 stroke-[2]"></i>
+                    </div>
+                    <div class="text-left">
+                        <h2 class="text-[15px] font-bold text-[#2C1035]">Localização</h2>
+                        <p class="text-[11px] text-gray-400 leading-tight">Av. São Jerônimo, 2783<br>Morada do Sol</p>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+            <div class="w-full bg-[#E5EEDD] p-4 rounded-[22px] flex items-center space-x-3.5">
+                <div class="w-10 h-10 rounded-full border-2 border-[#55713C] flex items-center justify-center text-[#55713C] shrink-0">
+                    <i data-lucide="clock" class="w-5 h-5 stroke-[2]"></i>
+                </div>
+                <div>
+                    <span class="text-[11px] font-semibold text-[#55713C] block leading-none mb-1">Horário de funcionamento</span>
+                    <h3 class="text-[14px] font-extrabold text-[#3B5424]">Todos os dias • 13h às 21h45</h3>
+                </div>
+            </div>
+
         </div>
 
-        <div class="flex items-start gap-3 pb-1">
-          <i data-lucide="plus" class="w-4 h-4 text-stone-500 mt-1 flex-shrink-0"></i>
-          <div>
-            <h4 class="font-medium text-sm text-stone-800">Harmonização Orofacial</h4>
-            <p class="text-xs text-stone-600 font-light">Equilíbrio e valorização dos seus traços.</p>
-          </div>
+        <footer class="pt-6 pb-2 text-center space-y-1">
+            <p class="text-[13px] font-semibold text-[#3A1443]">Um carinho gelado no seu dia.</p>
+            <p class="text-[10px] tracking-widest uppercase text-gray-400 font-bold">AÇAÍ FERREIRA E SORVETERIA</p>
+        </footer>
+
+    </main>
+
+    <div id="builderModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end sm:items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white w-full max-w-[480px] h-[90vh] sm:h-[85vh] max-h-[750px] rounded-t-[30px] sm:rounded-[30px] flex flex-col shadow-2xl overflow-hidden">
+            
+            <div class="p-4 sm:p-5 border-b border-gray-100 flex items-center justify-between bg-[#FBF8F3]">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-[#3D1845] flex items-center justify-center text-white">
+                        <i data-lucide="soup" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-[#2C1035] text-base leading-none">Monte seu Açaí</h3>
+                        <span class="text-[11px] text-gray-500">Personalize seu copo perfeito</span>
+                    </div>
+                </div>
+                <button onclick="toggleBuilderModal(false)" class="w-8 h-8 rounded-full bg-gray-200/60 flex items-center justify-center text-gray-600 hover:bg-gray-200">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-6 modal-scrollbar">
+                
+                <div>
+                    <h4 class="font-bold text-sm text-[#2C1035] mb-2 flex items-center justify-between">
+                        1. Escolha o Tamanho <span class="text-xs font-normal text-purple-700">*Obrigatório</span>
+                    </h4>
+                    <div class="grid grid-cols-3 gap-2.5">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="size" value="300ml" data-price="12.00" onchange="calculateTotal()" class="peer hidden" checked>
+                            <div class="p-3 border-2 border-gray-100 peer-checked:border-[#3D1845] peer-checked:bg-purple-50 rounded-2xl text-center transition-all">
+                                <span class="block font-bold text-sm text-[#2C1035]">300 ml</span>
+                                <span class="text-xs text-purple-700 font-semibold">R$ 12,00</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="size" value="500ml" data-price="17.00" onchange="calculateTotal()" class="peer hidden">
+                            <div class="p-3 border-2 border-gray-100 peer-checked:border-[#3D1845] peer-checked:bg-purple-50 rounded-2xl text-center transition-all">
+                                <span class="block font-bold text-sm text-[#2C1035]">500 ml</span>
+                                <span class="text-xs text-purple-700 font-semibold">R$ 17,00</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="size" value="700ml" data-price="22.00" onchange="calculateTotal()" class="peer hidden">
+                            <div class="p-3 border-2 border-gray-100 peer-checked:border-[#3D1845] peer-checked:bg-purple-50 rounded-2xl text-center transition-all">
+                                <span class="block font-bold text-sm text-[#2C1035]">700 ml</span>
+                                <span class="text-xs text-purple-700 font-semibold">R$ 22,00</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm text-[#2C1035] mb-2">
+                        2. Complementos Grátis <span class="text-xs font-normal text-gray-400">(Até 3 inclusos)</span>
+                    </h4>
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <label class="flex items-center space-x-2 p-2.5 rounded-xl border border-gray-100 hover:bg-gray-50 cursor-pointer">
+                            <input type="checkbox" name="free_toppings" value="Leite em Pó" class="rounded text-purple-800 focus:ring-purple-800">
+                            <span class="text-gray-700 font-medium">Leite em Pó</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2.5 rounded-xl border border-gray-100 hover:bg-gray-50 cursor-pointer">
+                            <input type="checkbox" name="free_toppings" value="Granola" class="rounded text-purple-800 focus:ring-purple-800">
+                            <span class="text-gray-700 font-medium">Granola</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2.5 rounded-xl border border-gray-100 hover:bg-gray-50 cursor-pointer">
+                            <input type="checkbox" name="free_toppings" value="Paçoca" class="rounded text-purple-800 focus:ring-purple-800">
+                            <span class="text-gray-700 font-medium">Paçoca</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2.5 rounded-xl border border-gray-100 hover:bg-gray-50 cursor-pointer">
+                            <input type="checkbox" name="free_toppings" value="Leite Condensado" class="rounded text-purple-800 focus:ring-purple-800">
+                            <span class="text-gray-700 font-medium">Leite Condensado</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2.5 rounded-xl border border-gray-100 hover:bg-gray-50 cursor-pointer">
+                            <input type="checkbox" name="free_toppings" value="Banana" class="rounded text-purple-800 focus:ring-purple-800">
+                            <span class="text-gray-700 font-medium">Banana</span>
+                        </label>
+                        <label class="flex items-center space-x-2 p-2.5 rounded-xl border border-gray-100 hover:bg-gray-50 cursor-pointer">
+                            <input type="checkbox" name="free_toppings" value="Morango" class="rounded text-purple-800 focus:ring-purple-800">
+                            <span class="text-gray-700 font-medium">Morango</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm text-[#2C1035] mb-2">
+                        3. Adicionais Especiais <span class="text-xs font-normal text-gray-400">(Opcional)</span>
+                    </h4>
+                    <div class="space-y-2 text-xs">
+                        <label class="flex items-center justify-between p-2.5 rounded-xl border border-gray-100 hover:bg-gray-50 cursor-pointer">
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" name="paid_toppings" value="Nutella" data-price="4.00" onchange="calculateTotal()" class="rounded text-purple-800 focus:ring-purple-800">
+                                <span class="text-gray-700 font-medium">Nutella</span>
+                            </div>
+                            <span class="text-purple-700 font-bold">+ R$ 4,00</span>
+                        </label>
+                        <label class="flex items-center justify-between p-2.5 rounded-xl border border-gray-100 hover:bg-gray-50 cursor-pointer">
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" name="paid_toppings" value="Creme de Ninho" data-price="3.50" onchange="calculateTotal()" class="rounded text-purple-800 focus:ring-purple-800">
+                                <span class="text-gray-700 font-medium">Creme de Ninho</span>
+                            </div>
+                            <span class="text-purple-700 font-bold">+ R$ 3,50</span>
+                        </label>
+                        <label class="flex items-center justify-between p-2.5 rounded-xl border border-gray-100 hover:bg-gray-50 cursor-pointer">
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" name="paid_toppings" value="M&Ms" data-price="3.00" onchange="calculateTotal()" class="rounded text-purple-800 focus:ring-purple-800">
+                                <span class="text-gray-700 font-medium">M&Ms</span>
+                            </div>
+                            <span class="text-purple-700 font-bold">+ R$ 3,00</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm text-[#2C1035] mb-1">Observações</h4>
+                    <textarea id="builderObs" placeholder="Ex: Pouco leite condensado, capricha na granola..." class="w-full text-xs p-3 border border-gray-200 rounded-xl focus:outline-none focus:border-purple-800 h-20 resize-none"></textarea>
+                </div>
+
+            </div>
+
+            <div class="p-4 border-t border-gray-100 bg-white flex items-center justify-between gap-3">
+                <div>
+                    <span class="text-[10px] text-gray-400 uppercase font-bold tracking-wider block">VALOR TOTAL</span>
+                    <span id="totalPrice" class="text-xl font-extrabold text-[#3D1845]">R$ 12,00</span>
+                </div>
+                <button onclick="sendAcaiOrder()" class="flex-1 bg-[#25D366] hover:bg-[#20ba5a] text-white py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center space-x-2 shadow-md transition-all active:scale-[0.98]">
+                    <i data-lucide="message-circle" class="w-5 h-5 fill-current"></i>
+                    <span>Enviar Pedido</span>
+                </button>
+            </div>
+
         </div>
-
-      </div>
-
-      <p class="text-[11px] text-stone-500 italic font-light">
-        Cada indicação começa com uma avaliação individual.
-      </p>
     </div>
 
-    <footer class="px-6 py-8 text-center bg-brand-bg border-t border-stone-200/60">
-      <h4 class="font-medium text-sm text-brand-accent mb-1">
-        Dr. Luan Nunes | Dentista
-      </h4>
-      <p class="font-serif text-lg text-stone-700 mb-1">
-        Luan Nunes - CRO
-      </p>
-      <p class="text-xs text-stone-400 mb-4 font-light">
-        CRO a informar
-      </p>
-      <div class="w-12 h-[1px] bg-stone-300 mx-auto mb-4"></div>
-      <p class="text-xs text-stone-500 font-light">
-        Saúde, naturalidade e atenção a você.
-      </p>
-    </footer>
+    <div id="menuModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end sm:items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white w-full max-w-[480px] h-[90vh] sm:h-[85vh] max-h-[750px] rounded-t-[30px] sm:rounded-[30px] flex flex-col shadow-2xl overflow-hidden">
+            
+            <div class="p-4 sm:p-5 border-b border-gray-100 flex items-center justify-between bg-[#FBF8F3]">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-[#3D1845] flex items-center justify-center text-white">
+                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-[#2C1035] text-base leading-none">Cardápio Digital</h3>
+                        <span class="text-[11px] text-gray-500">Todas as nossas opções deliciosas</span>
+                    </div>
+                </div>
+                <button onclick="closeMenuModal()" class="w-8 h-8 rounded-full bg-gray-200/60 flex items-center justify-center text-gray-600 hover:bg-gray-200">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
 
-  </main>
+            <div class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-6 modal-scrollbar">
+                
+                <div>
+                    <h4 class="font-extrabold text-base text-[#3D1845] border-b-2 border-[#D1EC76] pb-1 mb-3 inline-block">
+                        Açaís Tradicionais
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-start border-b border-gray-100 pb-2.5">
+                            <div>
+                                <h5 class="font-bold text-sm text-gray-800">Açaí Copo 300ml</h5>
+                                <p class="text-xs text-gray-500">Açaí puro e cremoso com 3 complementos grátis.</p>
+                            </div>
+                            <span class="font-bold text-sm text-[#3D1845] shrink-0 ml-2">R$ 12,00</span>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-gray-100 pb-2.5">
+                            <div>
+                                <h5 class="font-bold text-sm text-gray-800">Açaí Copo 500ml</h5>
+                                <p class="text-xs text-gray-500">Açaí puro e cremoso com 3 complementos grátis.</p>
+                            </div>
+                            <span class="font-bold text-sm text-[#3D1845] shrink-0 ml-2">R$ 17,00</span>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-gray-100 pb-2.5">
+                            <div>
+                                <h5 class="font-bold text-sm text-gray-800">Açaí Copo 700ml</h5>
+                                <p class="text-xs text-gray-500">Açaí puro e cremoso com 4 complementos grátis.</p>
+                            </div>
+                            <span class="font-bold text-sm text-[#3D1845] shrink-0 ml-2">R$ 22,00</span>
+                        </div>
+                    </div>
+                </div>
 
-  <div id="serviceModal" class="fixed inset-0 modal-backdrop hidden flex items-end sm:items-center justify-center p-0 sm:p-4 z-50 transition-opacity">
-    <div class="bg-brand-bg w-full max-w-md rounded-t-3xl sm:rounded-2xl p-6 shadow-2xl border border-stone-200 flex flex-col gap-4 animate-in fade-in slide-in-from-bottom duration-200">
-      
-      <div class="flex items-center justify-between pb-2 border-b border-stone-300/40">
-        <div>
-          <h3 class="font-serif text-2xl text-brand-accent font-medium">Selecione o Serviço</h3>
-          <p class="text-xs text-stone-500">Escolha o atendimento para prosseguir no WhatsApp</p>
+                <div>
+                    <h4 class="font-extrabold text-base text-[#3D1845] border-b-2 border-[#D1EC76] pb-1 mb-3 inline-block">
+                        Combinados Especiais
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-start border-b border-gray-100 pb-2.5">
+                            <div>
+                                <h5 class="font-bold text-sm text-gray-800">Sensação</h5>
+                                <p class="text-xs text-gray-500">Açaí, morango fresco, Nutella e leite em pó.</p>
+                            </div>
+                            <span class="font-bold text-sm text-[#3D1845] shrink-0 ml-2">R$ 21,00</span>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-gray-100 pb-2.5">
+                            <div>
+                                <h5 class="font-bold text-sm text-gray-800">Ninho com Nutella</h5>
+                                <p class="text-xs text-gray-500">Açaí, camada dupla de creme de Ninho e Nutella original.</p>
+                            </div>
+                            <span class="font-bold text-sm text-[#3D1845] shrink-0 ml-2">R$ 23,00</span>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-gray-100 pb-2.5">
+                            <div>
+                                <h5 class="font-bold text-sm text-gray-800">Fit Energy</h5>
+                                <p class="text-xs text-gray-500">Açaí zero açúcar, banana, granola artesanal e mel.</p>
+                            </div>
+                            <span class="font-bold text-sm text-[#3D1845] shrink-0 ml-2">R$ 19,00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-extrabold text-base text-[#3D1845] border-b-2 border-[#D1EC76] pb-1 mb-3 inline-block">
+                        Sorvetes & Taças
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-start border-b border-gray-100 pb-2.5">
+                            <div>
+                                <h5 class="font-bold text-sm text-gray-800">Casquinha / Cascão Tradicional</h5>
+                                <p class="text-xs text-gray-500">1 ou 2 bolas nos sabores: Baunilha, Chocolate, Morango, Flocos, Ninho ou Pistache.</p>
+                            </div>
+                            <span class="font-bold text-sm text-[#3D1845] shrink-0 ml-2">A partir de R$ 8,00</span>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-gray-100 pb-2.5">
+                            <div>
+                                <h5 class="font-bold text-sm text-gray-800">Copo de Sorvete Artesanal (2 bolas)</h5>
+                                <p class="text-xs text-gray-500">Escolha até 2 sabores artesanais + calda grátis (Chocolate, Morango ou Caramelo).</p>
+                            </div>
+                            <span class="font-bold text-sm text-[#3D1845] shrink-0 ml-2">R$ 14,00</span>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-gray-100 pb-2.5">
+                            <div>
+                                <h5 class="font-bold text-sm text-gray-800">Pote de Sorvete 500ml (Para levar)</h5>
+                                <p class="text-xs text-gray-500">Sorvete super cremoso ideal para compartilhar.</p>
+                            </div>
+                            <span class="font-bold text-sm text-[#3D1845] shrink-0 ml-2">R$ 20,00</span>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-gray-100 pb-2.5">
+                            <div>
+                                <h5 class="font-bold text-sm text-gray-800">Sundae da Casa</h5>
+                                <p class="text-xs text-gray-500">2 bolas de sorvete, cobertura especial, amendoim e chantilly.</p>
+                            </div>
+                            <span class="font-bold text-sm text-[#3D1845] shrink-0 ml-2">R$ 16,00</span>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-gray-100 pb-2.5">
+                            <div>
+                                <h5 class="font-bold text-sm text-gray-800">Milkshake Cremoso 400ml</h5>
+                                <p class="text-xs text-gray-500">Sabores: Ovomaltine, Nutella, Morango Supremo ou Ninho.</p>
+                            </div>
+                            <span class="font-bold text-sm text-[#3D1845] shrink-0 ml-2">R$ 18,00</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="p-4 border-t border-gray-100 bg-white">
+                <a href="https://wa.me/5582996402650?text=Ol%C3%A1!%20Gostaria%20de%20receber%20o%20card%C3%A1pio%20completo%20em%20PDF." target="_blank" class="w-full bg-[#3D1845] hover:bg-[#321339] text-white py-3 rounded-xl font-bold text-sm flex items-center justify-center space-x-2 transition-all">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    <span>Pedir Atendimento pelo WhatsApp</span>
+                </a>
+            </div>
+
         </div>
-        <button onclick="closeModal()" class="p-2 text-stone-400 hover:text-stone-700 rounded-full hover:bg-stone-200/50">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-
-      <div class="flex flex-col gap-2 my-2">
-        <button onclick="redirectToWhatsapp('Odontologia e Estética Orofacial')" class="w-full bg-brand-card hover:bg-stone-100 border border-stone-200/80 text-left p-3.5 rounded-xl transition flex items-center justify-between group">
-          <span class="text-sm font-medium text-stone-800">Odontologia e Estética Orofacial</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 group-hover:translate-x-1 transition-transform"></i>
-        </button>
-        
-        <button onclick="redirectToWhatsapp('Clínico Geral')" class="w-full bg-brand-card hover:bg-stone-100 border border-stone-200/80 text-left p-3.5 rounded-xl transition flex items-center justify-between group">
-          <span class="text-sm font-medium text-stone-800">Clínico Geral</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 group-hover:translate-x-1 transition-transform"></i>
-        </button>
-
-        <button onclick="redirectToWhatsapp('Prótese Dentária')" class="w-full bg-brand-card hover:bg-stone-100 border border-stone-200/80 text-left p-3.5 rounded-xl transition flex items-center justify-between group">
-          <span class="text-sm font-medium text-stone-800">Prótese Dentária</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 group-hover:translate-x-1 transition-transform"></i>
-        </button>
-
-        <button onclick="redirectToWhatsapp('Clareamento')" class="w-full bg-brand-card hover:bg-stone-100 border border-stone-200/80 text-left p-3.5 rounded-xl transition flex items-center justify-between group">
-          <span class="text-sm font-medium text-stone-800">Clareamento</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 group-hover:translate-x-1 transition-transform"></i>
-        </button>
-
-        <button onclick="redirectToWhatsapp('Lentes de Contato')" class="w-full bg-brand-card hover:bg-stone-100 border border-stone-200/80 text-left p-3.5 rounded-xl transition flex items-center justify-between group">
-          <span class="text-sm font-medium text-stone-800">Lentes de Contato</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 group-hover:translate-x-1 transition-transform"></i>
-        </button>
-
-        <button onclick="redirectToWhatsapp('Harmonização Orofacial')" class="w-full bg-brand-card hover:bg-stone-100 border border-stone-200/80 text-left p-3.5 rounded-xl transition flex items-center justify-between group">
-          <span class="text-sm font-medium text-stone-800">Harmonização Orofacial</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 group-hover:translate-x-1 transition-transform"></i>
-        </button>
-      </div>
-
-      <button onclick="closeModal()" class="w-full py-2.5 text-center text-xs text-stone-500 font-medium hover:text-stone-800">
-        Cancelar
-      </button>
-
     </div>
-  </div>
 
-  <script>
-    lucide.createIcons();
+    <script>
+        lucide.createIcons();
 
-    function openModal() {
-      document.getElementById('serviceModal').classList.remove('hidden');
-    }
+        function toggleBuilderModal(show) {
+            const modal = document.getElementById('builderModal');
+            if (show) {
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.classList.remove('opacity-0'), 10);
+            } else {
+                modal.classList.add('opacity-0');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            }
+        }
 
-    function closeModal() {
-      document.getElementById('serviceModal').classList.add('hidden');
-    }
+        function openMenuModal() {
+            const modal = document.getElementById('menuModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+        }
 
-    function redirectToWhatsapp(serviceName) {
-      const phone = '5582996402650';
-      const message = `Olá! Gostaria de agendar uma consulta para o serviço: ${serviceName}.`;
-      const encodedMessage = encodeURIComponent(message);
-      const url = `https://wa.me/${phone}?text=${encodedMessage}`;
-      window.open(url, '_blank');
-      closeModal();
-    }
-  </script>
+        function closeMenuModal() {
+            const modal = document.getElementById('menuModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+
+        function calculateTotal() {
+            const selectedSize = document.querySelector('input[name="size"]:checked');
+            let total = selectedSize ? parseFloat(selectedSize.dataset.price) : 0;
+
+            const paidToppings = document.querySelectorAll('input[name="paid_toppings"]:checked');
+            paidToppings.forEach(top => {
+                total += parseFloat(top.dataset.price);
+            });
+
+            document.getElementById('totalPrice').innerText = 'R$ ' + total.toFixed(2).replace('.', ',');
+        }
+
+        function sendAcaiOrder() {
+            const sizeInput = document.querySelector('input[name="size"]:checked');
+            const size = sizeInput ? sizeInput.value : '';
+            
+            const freeToppings = Array.from(document.querySelectorAll('input[name="free_toppings"]:checked')).map(cb => cb.value);
+            const paidToppings = Array.from(document.querySelectorAll('input[name="paid_toppings"]:checked')).map(cb => cb.value);
+            const obs = document.getElementById('builderObs').value.trim();
+            const total = document.getElementById('totalPrice').innerText;
+
+            let msg = `Olá! Gostaria de fazer o seguinte pedido de Açaí:\n\n`;
+            msg += `🍧 *Tamanho:* ${size}\n`;
+
+            if (freeToppings.length > 0) {
+                msg += `➕ *Complementos:* ${freeToppings.join(', ')}\n`;
+            }
+
+            if (paidToppings.length > 0) {
+                msg += `⭐ *Adicionais:* ${paidToppings.join(', ')}\n`;
+            }
+
+            if (obs) {
+                msg += `📝 *Obs:* ${obs}\n`;
+            }
+
+            msg += `\n💰 *Total:* ${total}`;
+
+            const encodedMsg = encodeURIComponent(msg);
+            window.open(`https://wa.me/5582996402650?text=${encodedMsg}`, '_blank');
+        }
+    </script>
 </body>
 </html>
